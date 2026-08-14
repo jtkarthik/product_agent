@@ -1,0 +1,12 @@
+[
+  {"name": "get_metadata_api_clfn_product_srv", "title": "get_metadata_api_clfn_product_srv", "description": "Get metadata of the classification OData service"},
+  {"name": "list_a_clfnproduct_for_api_clfn_product_srv", "title": "list_A_ClfnProduct_for_api_clfn_product_srv", "description": "List products with classification data"},
+  {"name": "get_a_clfnproduct_for_api_clfn_product_srv", "title": "get_A_ClfnProduct_for_api_clfn_product_srv", "description": "Get a classified product by key"},
+  {"name": "list_a_productcharc_for_api_clfn_product_srv", "title": "list_A_ProductCharc_for_api_clfn_product_srv", "description": "List product characteristics"},
+  {"name": "get_a_productcharc_for_api_clfn_product_srv", "title": "get_A_ProductCharc_for_api_clfn_product_srv", "description": "Get a product characteristic by key"},
+  {"name": "list_a_productcharcvalue_for_api_clfn_product_srv", "title": "list_A_ProductCharcValue_for_api_clfn_product_srv", "description": "List product characteristic values"},
+  {"name": "list_a_productclass_for_api_clfn_product_srv", "title": "list_A_ProductClass_for_api_clfn_product_srv", "description": "List class assignments for products"},
+  {"name": "get_a_productclass_for_api_clfn_product_srv", "title": "get_A_ProductClass_for_api_clfn_product_srv", "description": "Get a class assignment by key"},
+  {"name": "count_a_clfnproduct_for_api_clfn_product_srv", "title": "count_A_ClfnProduct_for_api_clfn_product_srv", "description": "Count classified products"},
+  {"name": "batch_for_api_clfn_product_srv", "title": "batch_for_api_clfn_product_srv", "description": "Execute batch OData operations"}
+]

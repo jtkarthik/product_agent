@@ -1,0 +1,391 @@
+{
+  "servers": {
+    "sap-s4-api-product-srv": {
+      "mcp_server_name": "sap.mcp/api_product_srv",
+      "description": "MCP server for the S/4HANA Product Master (API_PRODUCT_SRV) service.",
+      "tools": {
+        "get_metadata_api_product_srv": {
+          "description": "Get metadata of the OData service",
+          "input_schema": {"type": "object", "properties": {}, "required": []},
+          "mock_response": "<edmx:Edmx Version=\"1.0\"><edmx:DataServices><Schema Namespace=\"API_PRODUCT_SRV\"></Schema></edmx:DataServices></edmx:Edmx>"
+        },
+        "list_a_product_for_api_product_srv": {
+          "description": "Retrieve a list of entities from the A_Product collection",
+          "input_schema": {
+            "type": "object",
+            "properties": {
+              "filter": {"type": "string", "description": "OData $filter expression"},
+              "select": {"type": "string", "description": "OData $select fields"},
+              "top": {"type": "integer", "description": "Maximum number of results (max 100)"},
+              "skip": {"type": "integer", "description": "Number of results to skip"},
+              "expand": {"type": "string", "description": "Navigation properties to expand"}
+            },
+            "required": []
+          },
+          "mock_response": {
+            "results": [
+              {
+                "Product": "TG11",
+                "ProductType": "FERT",
+                "BaseUnit": "EA",
+                "ProductGroup": "L001",
+                "ProductHierarchy": "00000100000010000200",
+                "Division": "00",
+                "IndustrySector": "M",
+                "GrossWeight": "1.500",
+                "NetWeight": "1.250",
+                "WeightUnit": "KG",
+                "CountryOfOrigin": "DE",
+                "IsMarkedForDeletion": false
+              },
+              {
+                "Product": "FG126",
+                "ProductType": "FERT",
+                "BaseUnit": "PC",
+                "ProductGroup": "L001",
+                "ProductHierarchy": "00000100000010000100",
+                "Division": "01",
+                "IndustrySector": "M",
+                "GrossWeight": "0.800",
+                "NetWeight": "0.750",
+                "WeightUnit": "KG",
+                "CountryOfOrigin": "US",
+                "IsMarkedForDeletion": false
+              }
+            ]
+          }
+        },
+        "get_a_product_for_api_product_srv": {
+          "description": "Get a single product by key from A_Product",
+          "input_schema": {
+            "type": "object",
+            "properties": {
+              "product": {"type": "string", "description": "Product number"},
+              "select": {"type": "string", "description": "OData $select fields"},
+              "expand": {"type": "string", "description": "Navigation properties to expand"}
+            },
+            "required": ["product"]
+          },
+          "mock_response": {
+            "Product": "TG11",
+            "ProductType": "FERT",
+            "BaseUnit": "EA",
+            "ProductGroup": "L001",
+            "ProductHierarchy": "00000100000010000200",
+            "Division": "00",
+            "IndustrySector": "M",
+            "GrossWeight": "1.500",
+            "NetWeight": "1.250",
+            "WeightUnit": "KG",
+            "CountryOfOrigin": "DE",
+            "IsMarkedForDeletion": false,
+            "CreationDate": "/Date(1609459200000)/",
+            "LastChangeDate": "/Date(1700000000000)/"
+          }
+        },
+        "list_a_productdescription_for_api_product_srv": {
+          "description": "Retrieve product descriptions",
+          "input_schema": {
+            "type": "object",
+            "properties": {
+              "filter": {"type": "string", "description": "OData $filter expression"},
+              "select": {"type": "string", "description": "OData $select fields"},
+              "top": {"type": "integer", "description": "Maximum number of results (max 100)"},
+              "skip": {"type": "integer", "description": "Number of results to skip"}
+            },
+            "required": []
+          },
+          "mock_response": {
+            "results": [
+              {"Product": "TG11", "Language": "EN", "ProductDescription": "Finished Good TG11"},
+              {"Product": "TG11", "Language": "DE", "ProductDescription": "Fertigware TG11"}
+            ]
+          }
+        },
+        "get_a_productdescription_for_api_product_srv": {
+          "description": "Get product description by key",
+          "input_schema": {
+            "type": "object",
+            "properties": {
+              "product": {"type": "string", "description": "Product number"},
+              "language": {"type": "string", "description": "Language key (e.g. EN, DE)"},
+              "select": {"type": "string", "description": "OData $select fields"}
+            },
+            "required": ["product", "language"]
+          },
+          "mock_response": {
+            "Product": "TG11",
+            "Language": "EN",
+            "ProductDescription": "Finished Good TG11"
+          }
+        },
+        "list_a_productplant_for_api_product_srv": {
+          "description": "Retrieve product plant data",
+          "input_schema": {
+            "type": "object",
+            "properties": {
+              "filter": {"type": "string", "description": "OData $filter expression"},
+              "select": {"type": "string", "description": "OData $select fields"},
+              "top": {"type": "integer", "description": "Maximum number of results (max 100)"},
+              "skip": {"type": "integer", "description": "Number of results to skip"}
+            },
+            "required": []
+          },
+          "mock_response": {
+            "results": [
+              {
+                "Product": "TG11",
+                "Plant": "1000",
+                "MRPType": "PD",
+                "ProcurementType": "E",
+                "BaseUnit": "EA",
+                "IsMarkedForDeletion": false
+              }
+            ]
+          }
+        },
+        "get_a_productplant_for_api_product_srv": {
+          "description": "Get product plant data by key",
+          "input_schema": {
+            "type": "object",
+            "properties": {
+              "product": {"type": "string", "description": "Product number"},
+              "plant": {"type": "string", "description": "Plant code"},
+              "select": {"type": "string", "description": "OData $select fields"}
+            },
+            "required": ["product", "plant"]
+          },
+          "mock_response": {
+            "Product": "TG11",
+            "Plant": "1000",
+            "MRPType": "PD",
+            "ProcurementType": "E",
+            "BaseUnit": "EA",
+            "IsMarkedForDeletion": false
+          }
+        },
+        "list_a_productvaluation_for_api_product_srv": {
+          "description": "Retrieve product valuation data",
+          "input_schema": {
+            "type": "object",
+            "properties": {
+              "filter": {"type": "string", "description": "OData $filter expression"},
+              "select": {"type": "string", "description": "OData $select fields"},
+              "top": {"type": "integer", "description": "Maximum number of results (max 100)"},
+              "skip": {"type": "integer", "description": "Number of results to skip"}
+            },
+            "required": []
+          },
+          "mock_response": {
+            "results": [
+              {
+                "Product": "TG11",
+                "ValuationArea": "1000",
+                "ValuationType": "",
+                "StandardPrice": "125.00",
+                "MovingAveragePrice": "122.50",
+                "PriceUnitQty": "1",
+                "Currency": "USD",
+                "BaseUnit": "EA"
+              }
+            ]
+          }
+        },
+        "get_a_productvaluation_for_api_product_srv": {
+          "description": "Get product valuation by key",
+          "input_schema": {
+            "type": "object",
+            "properties": {
+              "product": {"type": "string", "description": "Product number"},
+              "valuationarea": {"type": "string", "description": "Valuation area"},
+              "valuationtype": {"type": "string", "description": "Valuation type"},
+              "select": {"type": "string", "description": "OData $select fields"}
+            },
+            "required": ["product", "valuationarea", "valuationtype"]
+          },
+          "mock_response": {
+            "Product": "TG11",
+            "ValuationArea": "1000",
+            "ValuationType": "",
+            "StandardPrice": "125.00",
+            "MovingAveragePrice": "122.50",
+            "PriceUnitQty": "1",
+            "Currency": "USD",
+            "BaseUnit": "EA"
+          }
+        },
+        "list_a_productunitsofmeasure_for_api_product_srv": {
+          "description": "Retrieve product units of measure",
+          "input_schema": {
+            "type": "object",
+            "properties": {
+              "filter": {"type": "string", "description": "OData $filter expression"},
+              "select": {"type": "string", "description": "OData $select fields"},
+              "top": {"type": "integer", "description": "Maximum number of results (max 100)"},
+              "skip": {"type": "integer", "description": "Number of results to skip"}
+            },
+            "required": []
+          },
+          "mock_response": {
+            "results": [
+              {
+                "Product": "TG11",
+                "AlternativeUnit": "EA",
+                "QuantityNumerator": "1",
+                "QuantityDenominator": "1",
+                "BaseUnit": "EA"
+              },
+              {
+                "Product": "TG11",
+                "AlternativeUnit": "DOZ",
+                "QuantityNumerator": "12",
+                "QuantityDenominator": "1",
+                "BaseUnit": "EA"
+              }
+            ]
+          }
+        }
+      }
+    },
+    "sap-s4-api-clfn-product-srv": {
+      "mcp_server_name": "sap.mcp/api_clfn_product_srv",
+      "description": "MCP server for the S/4HANA Product Classification (API_CLFN_PRODUCT_SRV) service.",
+      "tools": {
+        "get_metadata_api_clfn_product_srv": {
+          "description": "Get metadata of the classification OData service",
+          "input_schema": {"type": "object", "properties": {}, "required": []},
+          "mock_response": "<edmx:Edmx Version=\"1.0\"><edmx:DataServices><Schema Namespace=\"API_CLFN_PRODUCT_SRV\"></Schema></edmx:DataServices></edmx:Edmx>"
+        },
+        "list_a_clfnproduct_for_api_clfn_product_srv": {
+          "description": "List products with classification data",
+          "input_schema": {
+            "type": "object",
+            "properties": {
+              "filter": {"type": "string", "description": "OData $filter expression"},
+              "select": {"type": "string", "description": "OData $select fields"},
+              "top": {"type": "integer", "description": "Maximum number of results (max 100)"},
+              "skip": {"type": "integer", "description": "Number of results to skip"},
+              "expand": {"type": "string", "description": "Navigation properties to expand"}
+            },
+            "required": []
+          },
+          "mock_response": {
+            "results": [
+              {
+                "Product": "TG11",
+                "ProductType": "FERT",
+                "BaseUnit": "EA",
+                "ProductGroup": "L001",
+                "IsMarkedForDeletion": false
+              }
+            ]
+          }
+        },
+        "get_a_clfnproduct_for_api_clfn_product_srv": {
+          "description": "Get a classified product by key",
+          "input_schema": {
+            "type": "object",
+            "properties": {
+              "product": {"type": "string", "description": "Product number"},
+              "select": {"type": "string", "description": "OData $select fields"},
+              "expand": {"type": "string", "description": "Navigation properties to expand"}
+            },
+            "required": ["product"]
+          },
+          "mock_response": {
+            "Product": "TG11",
+            "ProductType": "FERT",
+            "BaseUnit": "EA",
+            "ProductGroup": "L001",
+            "IsMarkedForDeletion": false
+          }
+        },
+        "list_a_productcharc_for_api_clfn_product_srv": {
+          "description": "List product characteristics",
+          "input_schema": {
+            "type": "object",
+            "properties": {
+              "filter": {"type": "string", "description": "OData $filter expression"},
+              "select": {"type": "string", "description": "OData $select fields"},
+              "top": {"type": "integer", "description": "Maximum number of results (max 100)"},
+              "skip": {"type": "integer", "description": "Number of results to skip"}
+            },
+            "required": []
+          },
+          "mock_response": {
+            "results": [
+              {
+                "Product": "TG11",
+                "CharcInternalID": "0000000001",
+                "ClassType": "001"
+              },
+              {
+                "Product": "TG11",
+                "CharcInternalID": "0000000002",
+                "ClassType": "001"
+              }
+            ]
+          }
+        },
+        "list_a_productcharcvalue_for_api_clfn_product_srv": {
+          "description": "List product characteristic values",
+          "input_schema": {
+            "type": "object",
+            "properties": {
+              "filter": {"type": "string", "description": "OData $filter expression"},
+              "select": {"type": "string", "description": "OData $select fields"},
+              "top": {"type": "integer", "description": "Maximum number of results (max 100)"},
+              "skip": {"type": "integer", "description": "Number of results to skip"}
+            },
+            "required": []
+          },
+          "mock_response": {
+            "results": [
+              {
+                "Product": "TG11",
+                "ClassType": "001",
+                "CharcInternalID": "0000000001",
+                "CharcValuePositionNumber": "001",
+                "CharcValue": "RED",
+                "CharcFromDecimalValue": null,
+                "CharcToDecimalValue": null
+              }
+            ]
+          }
+        },
+        "list_a_productclass_for_api_clfn_product_srv": {
+          "description": "List class assignments for products",
+          "input_schema": {
+            "type": "object",
+            "properties": {
+              "filter": {"type": "string", "description": "OData $filter expression"},
+              "select": {"type": "string", "description": "OData $select fields"},
+              "top": {"type": "integer", "description": "Maximum number of results (max 100)"},
+              "skip": {"type": "integer", "description": "Number of results to skip"}
+            },
+            "required": []
+          },
+          "mock_response": {
+            "results": [
+              {
+                "Product": "TG11",
+                "ClassInternalID": "0000000100",
+                "ClassType": "001"
+              }
+            ]
+          }
+        }
+      }
+    }
+  },
+  "metadata": {
+    "version": "1.0.0",
+    "created_for_agent": "product-query-agent",
+    "mock_mode": true,
+    "deterministic": true,
+    "total_servers": 2,
+    "total_tools": 16,
+    "generated_from": ["translation.json"],
+    "generation_date": "2026-08-14"
+  }
+}

@@ -1,0 +1,12 @@
+apiVersion: solution.sap/v1
+kind: Solution
+
+metadata:
+  name: product-query-agent-2f8c2
+  version: 1.0.0
+  description: AI agent that answers natural language queries about Products in an SAP S/4HANA system
+
+assets:
+  - ref: ./assets/product-query-agent/asset.yaml
+  - ref: ./assets/sap-s4-api-product-srv-mcp-server/asset.yaml
+  - ref: ./assets/sap-s4-api-clfn-product-srv-mcp-server/asset.yaml

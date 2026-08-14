@@ -1,0 +1,21 @@
+{
+  "mcpTranslationVersion": "0.6",
+  "target": {
+    "ordId": "sap.s4:apiResource:API_CLFN_PRODUCT_SRV:v1",
+    "type": "edmx"
+  },
+  "serverInfo": {
+    "name": "sap.mcp/api_clfn_product_srv",
+    "title": "api_clfn_product_srv",
+    "version": "1.0.0",
+    "description": "MCP server for the api_clfn_product_srv service."
+  },
+  "tools": [
+    {"name": "get_metadata_api_clfn_product_srv", "title": "get_metadata_api_clfn_product_srv", "description": "Get metadata of the classification OData service", "odataType": {"metadataRequest": {}}},
+    {"name": "list_a_clfnproduct_for_api_clfn_product_srv", "title": "list_A_ClfnProduct_for_api_clfn_product_srv", "description": "List products with classification data", "odataType": {"entitySet": {"name": "A_ClfnProduct", "crudOperation": "read", "parameters": [{"name": "filter"}, {"name": "select"}, {"name": "top"}, {"name": "skip"}, {"name": "expand"}]}}},
+    {"name": "get_a_clfnproduct_for_api_clfn_product_srv", "title": "get_A_ClfnProduct_for_api_clfn_product_srv", "description": "Get a classified product by key", "odataType": {"entitySet": {"name": "A_ClfnProduct", "crudOperation": "readByKey", "parameters": [{"name": "Product", "newParameterName": "product"}, {"name": "select"}, {"name": "expand"}]}}},
+    {"name": "list_a_productcharc_for_api_clfn_product_srv", "title": "list_A_ProductCharc_for_api_clfn_product_srv", "description": "List product characteristics", "odataType": {"entitySet": {"name": "A_ProductCharc", "crudOperation": "read", "parameters": [{"name": "filter"}, {"name": "select"}, {"name": "top"}, {"name": "skip"}]}}},
+    {"name": "list_a_productcharcvalue_for_api_clfn_product_srv", "title": "list_A_ProductCharcValue_for_api_clfn_product_srv", "description": "List product characteristic values", "odataType": {"entitySet": {"name": "A_ProductCharcValue", "crudOperation": "read", "parameters": [{"name": "filter"}, {"name": "select"}, {"name": "top"}, {"name": "skip"}]}}},
+    {"name": "list_a_productclass_for_api_clfn_product_srv", "title": "list_A_ProductClass_for_api_clfn_product_srv", "description": "List class assignments for products", "odataType": {"entitySet": {"name": "A_ProductClass", "crudOperation": "read", "parameters": [{"name": "filter"}, {"name": "select"}, {"name": "top"}, {"name": "skip"}]}}}
+  ]
+}

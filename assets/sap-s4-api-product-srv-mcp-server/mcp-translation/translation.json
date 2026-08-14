@@ -1,0 +1,25 @@
+{
+  "mcpTranslationVersion": "0.6",
+  "target": {
+    "ordId": "sap.s4:apiResource:API_PRODUCT_SRV:v1",
+    "type": "edmx"
+  },
+  "serverInfo": {
+    "name": "sap.mcp/api_product_srv",
+    "title": "api_product_srv",
+    "version": "1.0.0",
+    "description": "MCP server for the api_product_srv service."
+  },
+  "tools": [
+    {"name": "get_metadata_api_product_srv", "title": "get_metadata_api_product_srv", "description": "Get metadata of the OData service", "odataType": {"metadataRequest": {}}},
+    {"name": "list_a_product_for_api_product_srv", "title": "list_A_Product_for_api_product_srv", "description": "Retrieve a list of entities from the A_Product collection", "odataType": {"entitySet": {"name": "A_Product", "crudOperation": "read", "parameters": [{"name": "filter"}, {"name": "select"}, {"name": "top"}, {"name": "skip"}, {"name": "expand"}]}}},
+    {"name": "get_a_product_for_api_product_srv", "title": "get_A_Product_for_api_product_srv", "description": "Get a single product by key from A_Product", "odataType": {"entitySet": {"name": "A_Product", "crudOperation": "readByKey", "parameters": [{"name": "Product", "newParameterName": "product"}, {"name": "select"}, {"name": "expand"}]}}},
+    {"name": "list_a_productdescription_for_api_product_srv", "title": "list_A_ProductDescription_for_api_product_srv", "description": "Retrieve product descriptions", "odataType": {"entitySet": {"name": "A_ProductDescription", "crudOperation": "read", "parameters": [{"name": "filter"}, {"name": "select"}, {"name": "top"}, {"name": "skip"}]}}},
+    {"name": "get_a_productdescription_for_api_product_srv", "title": "get_A_ProductDescription_for_api_product_srv", "description": "Get product description by key", "odataType": {"entitySet": {"name": "A_ProductDescription", "crudOperation": "readByKey", "parameters": [{"name": "Product", "newParameterName": "product"}, {"name": "Language", "newParameterName": "language"}, {"name": "select"}]}}},
+    {"name": "list_a_productplant_for_api_product_srv", "title": "list_A_ProductPlant_for_api_product_srv", "description": "Retrieve product plant data", "odataType": {"entitySet": {"name": "A_ProductPlant", "crudOperation": "read", "parameters": [{"name": "filter"}, {"name": "select"}, {"name": "top"}, {"name": "skip"}]}}},
+    {"name": "get_a_productplant_for_api_product_srv", "title": "get_A_ProductPlant_for_api_product_srv", "description": "Get product plant data by key", "odataType": {"entitySet": {"name": "A_ProductPlant", "crudOperation": "readByKey", "parameters": [{"name": "Product", "newParameterName": "product"}, {"name": "Plant", "newParameterName": "plant"}, {"name": "select"}]}}},
+    {"name": "list_a_productvaluation_for_api_product_srv", "title": "list_A_ProductValuation_for_api_product_srv", "description": "Retrieve product valuation data", "odataType": {"entitySet": {"name": "A_ProductValuation", "crudOperation": "read", "parameters": [{"name": "filter"}, {"name": "select"}, {"name": "top"}, {"name": "skip"}]}}},
+    {"name": "get_a_productvaluation_for_api_product_srv", "title": "get_A_ProductValuation_for_api_product_srv", "description": "Get product valuation by key", "odataType": {"entitySet": {"name": "A_ProductValuation", "crudOperation": "readByKey", "parameters": [{"name": "Product", "newParameterName": "product"}, {"name": "ValuationArea", "newParameterName": "valuationarea"}, {"name": "ValuationType", "newParameterName": "valuationtype"}, {"name": "select"}]}}},
+    {"name": "list_a_productunitsofmeasure_for_api_product_srv", "title": "list_A_ProductUnitsOfMeasure_for_api_product_srv", "description": "Retrieve product units of measure", "odataType": {"entitySet": {"name": "A_ProductUnitsOfMeasure", "crudOperation": "read", "parameters": [{"name": "filter"}, {"name": "select"}, {"name": "top"}, {"name": "skip"}]}}}
+  ]
+}

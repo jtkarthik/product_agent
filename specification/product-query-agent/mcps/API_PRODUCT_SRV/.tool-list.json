@@ -1,0 +1,15 @@
+[
+  {"name": "get_metadata_api_product_srv", "title": "get_metadata_api_product_srv", "description": "Get metadata of the OData service"},
+  {"name": "list_a_product_for_api_product_srv", "title": "list_A_Product_for_api_product_srv", "description": "Retrieve a list of products from A_Product"},
+  {"name": "get_a_product_for_api_product_srv", "title": "get_A_Product_for_api_product_srv", "description": "Get a single product by key"},
+  {"name": "list_a_productdescription_for_api_product_srv", "title": "list_A_ProductDescription_for_api_product_srv", "description": "List product descriptions"},
+  {"name": "get_a_productdescription_for_api_product_srv", "title": "get_A_ProductDescription_for_api_product_srv", "description": "Get a product description by key"},
+  {"name": "list_a_productplant_for_api_product_srv", "title": "list_A_ProductPlant_for_api_product_srv", "description": "List product plant data"},
+  {"name": "get_a_productplant_for_api_product_srv", "title": "get_A_ProductPlant_for_api_product_srv", "description": "Get product plant data by key"},
+  {"name": "list_a_productvaluation_for_api_product_srv", "title": "list_A_ProductValuation_for_api_product_srv", "description": "List product valuation data"},
+  {"name": "get_a_productvaluation_for_api_product_srv", "title": "get_A_ProductValuation_for_api_product_srv", "description": "Get product valuation by key"},
+  {"name": "list_a_productunitsofmeasure_for_api_product_srv", "title": "list_A_ProductUnitsOfMeasure_for_api_product_srv", "description": "List product units of measure"},
+  {"name": "get_a_productunitsofmeasure_for_api_product_srv", "title": "get_A_ProductUnitsOfMeasure_for_api_product_srv", "description": "Get units of measure by key"},
+  {"name": "count_a_product_for_api_product_srv", "title": "count_A_Product_for_api_product_srv", "description": "Count products"},
+  {"name": "batch_for_api_product_srv", "title": "batch_for_api_product_srv", "description": "Execute batch OData operations"}
+]
